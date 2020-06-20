@@ -1,0 +1,85 @@
+{
+  "inputs": [
+    {
+      "name": "FactoryFloorState",
+      "inputs": [
+        {
+          "input": "fart",
+          "output": "You just farted and shitted",
+          "action": "switch",
+          "switchState": "GameOverState"
+        },
+        {
+          "input": "shit",
+          "output": "You have a case of OCD AND YOU SHIT",
+          "action": "switch",
+          "switchState": "GameOverState"
+        },
+        {
+          "input": "dig in",
+          "output": "You found a SHITDRIVER",
+          "action": "add",
+          "inventory": "screwdriver"
+        },
+        {
+          "input": "loosen screw",
+          "output": "You found a SHITDRIVER",
+          "action": "add",
+          "inventory": "screwdriver"
+        },
+        {
+          "input": "look around",
+          "output": "there is a suspicius toilet full of crap it really stinks in here, I can't take a shit here. Who locked me in here."
+        },
+        {
+          "input": "use screwdriver",
+          "output": "You have shoved the screw driver up your asshole to prevent yourself from shitting all over the place",
+          "action": "remove",
+          "inventory": "screwdriver"
+        },
+        {
+          "input": "kick door",
+          "output": "It sounded like something broke",
+          "inventory": "kickedToiletDoor"
+
+        },
+        {
+          "input": "open door",
+          "prerequisites": "kickedToiletDoor",
+          "output": "You open the already broken door and make way past hte boxed toilets into the toilet production area",
+          "action": "switch",
+          "switchState": "FactoryState"
+        },
+        {
+          "input": "open door",
+          "output": "The door is locked smarty pants!"
+        }
+      ]
+    },
+    {
+      "name": "GameOverState",
+      "inputs": [
+        {
+          "input": "Play",
+          "output": "Restarting GAME",
+          "action": "switch",
+          "switchState": "FactoryFloorState"
+        }
+      ]
+    }
+
+    {
+      "name": "BattleSystem",
+      "inputs": [
+        {
+          "input": "Attack",
+          "output": "Attacking",
+        },
+        {
+          "input": "Heal",
+          "output": "Healing"
+        }
+      ]
+    }
+  ]
+}
